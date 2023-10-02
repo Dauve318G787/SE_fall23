@@ -1,0 +1,152 @@
+Useful Links
+Official Site
+Official Forum
+Youtube Channel
+Facebook Page
+Facebook Group
+Downloads
+FAQ
+Debugging Guide - Common Issues
+Debugging Guide - DAW Issues
+Debugging Guide - Operating System Issues
+Debugging Guide - iLok Issues
+Optimizing your PC for Music Production
+Posts by Flair
+Announcement
+Presets
+Question
+Solved
+Feedback
+General Discussion
+User Submissions
+Tutorial
+
+I'm going to be getting my first interface and I've never had one before. Was thinking of getting a focusrite Scarlett 2i2 but have seen other people recommending UA Volt saying it works better.
+I'm new to all this so I want to ask and see what is recommended? Thanks for the help.
+
+I was in a similar position a little while ago. I ended up going with the Volt because I liked how it sounded more in the reviews I was watching. It also has MIDI ports on the back which was a requirement for me, while the Scarlett does not. If you’re looking to set up a MIDI board with your plugins this might be something you want to consider. Now that I have it I can say that it’s built really well and I’m very happy with its performance. Hope this helps!
+
+Did you go with a Volt 1 or 2?
+
+I got the Volt 2. I'm planning to invest in a microphone in the near future so I wanted the extra input. 
+If you can spend a little extra money and you like using compressors in the front of your signal chain I'd also recommend one of the 76 versions of the Volt. They're the same as the regular ones with an added feature of having a built-in model of UA's 76 compressor for each output. They're pretty good for guitar and vocals.
+
+I'm thinking of getting a Volt 2. I've been looking around a lot and it seems like a good choice.
+Do you have any issues with latency with it? That's what I'm worried most about.
+My laptop is a Lenovo Legion 5 AMD Ryzen 7 5800H
+
+I have a Motu M4 that works very well. Next step up would be something from Apogee or Babyface.
+
+I have an Audient iD14
+
+I love my id4 mkII
+
+Upping the MK2 series. The quality and noise floor is simply unrivaled and they are feature packed, however........
+.....These little buggers have more latency than I thought was humanly possible (/s),  compared to many of my other interfaces. 
+In my experience, even with an m1 pro MacBook, the lowest buffer rate still adds up round-trip to an annoyingly large 8ms which is too noticeable for me. 
+For quality & style: Any audient MK2 series.
+For lowest latency: UA Volt series (I get roughly 2-3 Ms)
+Obviously latency can be disregarded if direct monitoring is used.
+P.s. don't get a focusrite scarlet unless you're really tight on budget and/or can find a decent bundle for cheap. Interfaces are something that shouldn't be cheaped out on otherwise it will creep up behind you and bite you in the backside. <-----P.e.
+
+I use windows 10 and I get 6ms with 48000hz and 64 sample rate. I went with the audient because it has a really powerful headphone amp. It can easily power 300-600ohm headphones with a good amount of volume.
+
+RME is always great too.
+
+Great interfaces, but its quite expensive.
+
+I have a Scarlett Solo 3rd gen, and the instrument channel (2) doesn’t have enough headroom to keep my signal from clipping going into Reaper without having the Solo’s gain knob all the way down. I ended up buying a passive DI box and going in through the XLR channel (1) to solve my clipping issues.
+The DI box cost as much as the Solo; had I known, I would’ve been willing to spend double its cost on a better interface rather than have 2 devices like I do now.
+edit: Must be a couple of Focusrite employees in here, lol.
+
+Why turn the gain up in the first place?
+
+Because better distortion when properly leveled
+
+I was wondering this. Most plugins have input/output levels, Reaper has levels… I can’t think of a need to adjust your interface gain to alter level, you just want it so it’s audible and not clipping.
+
+
+you just want it so it’s audible and not clipping
+
+And there is the issue with the instrument input on the 3rd gen Solo.
+It strikes me as odd that no one seems aware of this issue with the Solo today. It's pretty well known.
+
+Do you not like being able to adjust levels for different instruments?
+
+Focusrite employees haven't heard of gain staging. Let them be.
+
+What a weird experience this thread was yesterday. I was all, "I feel like I'm taking crazy pills!"
+
+I generally only play guitar through mine, so I don't have that need. Sometimes I'll play the bass a little, but any level adjustments I make in Reaper rather than the interface.
+Genuine question on turning up the gain on the interface though. I understand the need for it with a vocal mic or drum mics, but those are a whole other beast and use xlr input. Guitars I've never needed more gain on the interface.
+
+It's not about turning up the gain on the interface, it's about turning the gain down on the interface. It's not about needing more gain, it's about having too much gain.
+
+Right but you said originally you turn the knob all the way down to remove clipping. So if the clipping is gone, you don't need to turn it down more?
+
+I said I had to go in through the XLR side to solve the clipping problem. Sorry if I didn't make it clear that turning the channel 2 gain down to 0 wasn't a solid fix.
+
+Question? Do you have your Instrument preamp turned on? Its a small button on the interface itself that provides some extra gain for lower output pickups, I find some of my guitars are way too hot with it but others are too quiet without it
+
+Yeah. Turning it off changes the signal impedance, which completely changes your tone. Gotta have it on.
+
+Are you sure your interface isn't flawed? My solo 3rd gen doesn't even start pre-clipping until I push the gain almost half way with a Seymour Duncan Hot Rails equipped guitar, even when I strum very hard. I turn the gain down a bit when using my other guitar with the EMG 81 but never had to turn it all the way to 0, far from it actually.
+I imagine you're using some sort of extremely high output active pickups in order to even run into this problem. May I ask what?
+
+It's been a known problem with Solos for a long time now.
+
+Why not just turn the volume on the guitar down?
+
+Why would I want to handicap my instrument's sound for an interface without enough headroom?
+
+Just chiming in for the Scarlett 2i2… it’s served me just fine, very very minimal latency even when working on larger projects with more tracks in Logic Pro X. The neural dsp plugins have all functioned even better in standalone and latency is near non-existent. I’ve bought the Cory Wong and recently Tone King and couldn’t be happier w the tones (trialed the others, great selections just gotta watch my budget lol- Henson is up next probably 🤓). Mainly using a MIM fender thinline telecaster and ‘67 mustang through them and WOW. 
+Hope you find what best works for you and your set up, and definitely hear everyone else out! Take care!
+
+If you plan on just using it for guitar, I would get the Focusrite solo. Cheaper and same results. If money is not an object, then the UA interface would be my choice.
+
+That box doesn't sound all that good. Better to spend the extra 50-100$ for a better interface.
+
+I recommend finding a deal on a used Apogee Duet 2. Mine works great!
+
+Honestly my best advice would just be a Scarlett BUT then buy yourself a nice DI box so you're not reliant on the pre-amps as much.
+
+Could you explain that? Is there a problem with the pre amps in the Scarlett? This is all new to me and don't really understand it well.
+
+It's not that there's a problem with them specifically, though they're not amazing. No interface at that price point will have particularly great high impedance (HiZ) DI inputs. A good DI box (I like the Warm Audio Active/Passive) will sound better, long outlast your first interface and will never not be useful. 
+I've also found after doing the whole amp sim thing since about 2008 that input clipping/running too hot can be incredibly difficult to avoid on the HiZ inputs of audio interfaces. A good DI box gets around this issue by giving you more control over the input volume.
+Here's a post that breaks down my experience with buying a DI box.
+
+That’s an amazing piece of information that I never thought of and I’m glad I read that post, would you be able to take a video of the comparison? I have my tone pretty much where I want it but you can always do better
+
+I don't have the time or the inclination to make one but there's a fairly good one on the Joey Sturgis Tones YouTube channel.
+
+Are there good subreddits for asking newb questions about hooking up audio interfaces?
+
+2nd'ing on the DI box.  Bought a Rupert Neve DI box and it was worth every penny.  It has outlasted a few interfaces and is built to survive orbital reentry.
+
+DO NOT get a Scarlett 2i2!
+Look through my post history.  Tired of trying to explain this.  And tired of seeing the Scarlett 2i2 recommended.  If you get the 2i2, get a DI box right away.  It'll run you another $50-ish.
+
+I'm not going to slog through your post history looking for stuff only relating to a certain topic.
+Would you be able to explain briefly why you don't like it?
+
+Axe io hands down. It was designed for guitars. The Z knob does wonders with different guitars (it’s an impedance knob if you’re not familiar). It has a very cool preamp and never had issues with headroom or clipping. Also has the best outputs for PA. If you buy the big one you have a reamp output which is incredible when you pair it with a power amp such as Seymour Duncan power state to a real cab. Also has midi controls and you can plug your expression pedals or switches to it directly. It has everything 👌
+
+I’d recommend the Audient EVO or 4th gen Focusrite Scarlett. They both offer an auto gain feature which I think is incredibly helpful for people new to audio interfaces.
+
+My volt 176 has been flawless
+
+Why do you need a DAW? Neural quad cortex plugs straight into your computer.
+
+This man thinks.
+
+My vote is for Arturia. I have the AudioFuse Studio and it's perfect for me, especially on Linux.
+
+Any decent interface with low latency (native ASIO drivers) will do fine. I have an ancient Scarlett 2i4 that works great. The only thing to watch out for with Scarletts is that some of them don't have a padding function so guitar input can get too hot even with the interface gain turned down. I know first gen 2i2 has that problem, but I think the later generations don't have it. It was the reason I got a 2i4 instead of 2i2.
+
+Motu series. But it depends more on pc or laptop you have for latency and all.
+
+Just splurge and get a decent UA Apollo, then go down the UA rabbit hole until you're broke.
+
+I have a Presonus Quantum 2. Lowest latency on the market (I regularly use it between 2.5ms and 4ms of latency), but it’s a Thunderbolt interface so it requires either a built PC with a Thunderbolt natively built to the motherboard or a Mac.
+

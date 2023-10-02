@@ -1,4 +1,4 @@
-# cs325_pj1
+# SE_fall23
 
 This program takes a user given URL, makes an HTTP GET request and returns the data to a text file
 

@@ -1,9 +1,9 @@
 # Need sys for reading from command line
 
 import sys
-from download_text_data import download_text
-from write_to_file import write_text_file
-from data_parser import parse_file
+from module_2.download_text_data import download_text
+from module_1.write_to_file import write_text_file
+from module_3.data_parser import parse_file
 
 def main():
 

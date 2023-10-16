@@ -9,7 +9,7 @@ def download_text(url, max_retries, retry_delay):
             if response.status_code == 200:
                 return response.text
     
-        except requests.exceptions.HTTPerror as e:
+        except requests.exceptions.HTTPError as e:
             print(f"HTTP error occured: {str(e)}")
         
         except Exception as e:

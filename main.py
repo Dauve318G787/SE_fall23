@@ -1,3 +1,9 @@
+#----------------------------
+# The start of the program, expects a URL specifically to reddit but will
+# work with other HTML files. Behavior unpredictable although if not used
+# in a reddit website
+#-------------------------------------
+
 # Need sys for reading from command line
 
 import sys

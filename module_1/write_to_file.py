@@ -1,3 +1,8 @@
+#------------------------------
+# This module accepts some data and a file name.
+# It writes the data to the file name given to the directory specified in this file
+#-------------------------------------------------
+
 import os
 
 def write_text_file(text_data, output_file):

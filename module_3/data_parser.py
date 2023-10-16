@@ -1,3 +1,9 @@
+#--------------------------------------
+# This module accepts two files. It reads from the input_file which is created by module_1.
+# Then parses the contents of the file using bs4. After it writes the desired content from the input file to a new file
+# specified in this file
+#------------------------------------
+
 import os
 import lxml
 import chardet

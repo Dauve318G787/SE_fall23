@@ -1,3 +1,8 @@
+#--------------------------------------
+# This module accepts a URL, number of requests to make, and a delay timer.
+# If the response from the GET request is succesfull, this module returns the response text
+#-------------------------------------
+
 import requests
 import time
 

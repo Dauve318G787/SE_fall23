@@ -1,4 +1,5 @@
 *.py~
 .env
+.env~
 environment/
 .gitignore~

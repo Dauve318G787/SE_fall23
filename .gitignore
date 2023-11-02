@@ -1,5 +1,8 @@
-*.py~
+# Environment stuff
 .env
-.env~
 environment/
+
+# Emacs IDE backup files
 .gitignore~
+*.py~
+.env~

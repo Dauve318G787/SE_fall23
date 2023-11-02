@@ -1,6 +1,6 @@
 # SE_fall23
 
-This program takes a user given URL, makes an HTTP GET request and returns the data to a text file
+This program takes a user given URL, processes the URL and sends the processed file to OpenAI API
 
 # Installation
 
@@ -18,3 +18,8 @@ pip install -r environment.yml  # Install packages from the YAML file
 ```
 python main.py https://old.<reddit URL>	# Omit "www" and replace with "old"
 ```
+
+# Project 4
+
+Specifically for this project we need an API key. So you must create a .env file or use global environment variables.
+Look at module_4 to see how to authenticate your API key and the environment variable name

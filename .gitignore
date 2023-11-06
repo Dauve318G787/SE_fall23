@@ -1,6 +1,7 @@
 # Environment stuff
 .env
 environment/
+__pycache__
 
 # Emacs IDE backup files
 .gitignore~

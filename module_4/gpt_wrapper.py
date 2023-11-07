@@ -2,27 +2,29 @@
 
 import os
 import openai
+import time
 from dotenv import load_dotenv
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 env_path = os.path.join(script_dir, "..", ".env")
+data_path = os.path.join(script_dir, "..", "Data/processed/tag_dump.txt")
 
 load_dotenv(env_path)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 #DAVID CODE BEGINS HERE
 
-comment_file = "proj4test.txt" #we can switch this to a command line arg later- this is here for testing purposes
-
-prompts = [] #creates empty list for prompts to be read by GPT
+comments = [] #creates empty list for comments to be read by GPT
+prompt = "You are a helpful psychiatrist that can analyze the sentiment of messages. Just return the sentiment of the given message" # Prompt to tell the GPT model how to behave
+sentiments = []
 
 try:
 
-    with open(comment_file, "r") as file:
+    with open(data_path, 'r', encoding='utf-8') as file:
 
         for line in file:
 
-            prompts.append(line.strip()) #adds each line to list, omitting newline character
+            comments.append(line.strip()) #adds each line to list, omitting newline character
 
 
 except FileNotFoundError:
@@ -33,17 +35,17 @@ except Exception as e:
      
     print("Error " + e + " occurred.")
 
-
-for prompt in prompts:
-
-    print(prompt) #prints each line in file
-
-#completion = openai.ChatCompletion.create(
-    #model="gpt-3.5-turbo",
-    #messages=[
-        #{"role": "system", "content": "You are a modern psychiatrist, skilled in analyzing the sentiment of statements."},
-        #{"role": "user", "content": "What is the sentiment of this sentence: I'm so excited!"}
-        #]
-    #)
-
-#print(completion.choices[0].message)
+for comment in comments:
+    print(f"Working on {comment}")
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": f"Analyze the sentiment of {comment}"}
+        ]
+    )
+    sentiment = completion.choices[0].message
+    sentiments.append(sentiment)
+    time.sleep(21)
+    
+print(sentiments)

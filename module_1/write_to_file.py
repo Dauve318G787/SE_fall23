@@ -5,10 +5,10 @@
 
 import os
 
-def write_text_file(text_data, output_file):
+def write_text_file(text_data, folder, output_file):
     cur_dir = os.getcwd()
-    lf_dir = "Data/raw"
-    file_path = os.path.join(cur_dir, lf_dir, output_file)
+    data_dir = "Data/" + folder
+    file_path = os.path.join(cur_dir, data_dir, output_file)
     try:
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(text_data)

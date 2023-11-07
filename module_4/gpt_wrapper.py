@@ -50,7 +50,7 @@ completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
         {"role": "system", "content": prompt},
-        {"role": "user", "content": f"Analyze the sentiment of {comments_as_string}"}
+        {"role": "user", "content": comments_as_string}
     ]
 )
 sentiments = completion.choices[0].message

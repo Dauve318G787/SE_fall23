@@ -11,12 +11,10 @@ from dotenv import load_dotenv
 script_dir = os.path.dirname(os.path.abspath(__file__))
 env_path = os.path.join(script_dir, "..", ".env")
 data_path = os.path.join(script_dir, "..", "Data/processed/tag_dump.txt")
+sentiment_dest = os.path.join(script_dir, "..", "Data/sentiments/sentiment_dump.txt")
 load_dotenv(env_path)
 openai.api_key = os.getenv("OPENAI_API_KEY")
-comments = []
 prompt = "You are a helpful psychiatrist that can analyze the sentiment of messages. Only return the sentiments of the given messages, delimited by %%. Format your response as comma seperated values" # Prompt to tell the GPT model how to behave
-sentiments = ""
-delimiter = '%% '
 
 ########
 # END DATA
@@ -24,39 +22,52 @@ delimiter = '%% '
 
 #####################
 # Open tag file and store it in a list
-####################
+#####################
+def get_processed_data(path):
+    comments = []
+    delimiter = '%% '
+    try:
+        with open(path, 'r', encoding='utf-8') as file:
+            for line in file:
+                cleaned_line = line.replace('\u200b', '').strip() # Maybe should clean the file before writing it out.
+                if cleaned_line:
+                    comments.append(cleaned_line)
 
-try:
-    with open(data_path, 'r', encoding='utf-8') as file:
-        for line in file:
-            cleaned_line = line.replace('\u200b', '').strip() # Maybe should clean the file before writing it out.
-            if cleaned_line:
-                comments.append(cleaned_line)
+    except FileNotFoundError:
+        print("That file could not be found. Please try again.")
 
-except FileNotFoundError:
-    print("That file could not be found. Please try again.")
+    except Exception as e:
+        print("Error " + e + " occurred.")
 
-except Exception as e:
-    print("Error " + e + " occurred.")
-
+    comments_as_string = delimiter.join(comments) # Needed to send all comments in a single request
+    return comments_as_string
+    
 ##############################
 # Make the call to API, can use any here we used OpenAI
 #############################
-
-comments_as_string = delimiter.join(comments) # Needed to send all comments in a single request
-print(f"Working on {comments_as_string}") # For debugging can remove
-# See OpenAI doc for usage
-completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "system", "content": prompt},
-        {"role": "user", "content": comments_as_string}
-    ]
-)
-sentiments = completion.choices[0].message
+def request_sentiment(user_prompt, prompt_content):
+    sentiments = ""
+    #print(f"Working on {prompt_content}") # For debugging can remove
+    # See OpenAI doc for usage
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": user_prompt},
+            {"role": "user", "content": prompt_content}
+        ]
+    )
+    sentiments = completion.choices[0].message.content
+    return sentiments
 
 ###########################
 # Write the sentiments out to a file
 ###########################
+def write_sentiment():
+    analysis = request_sentiment(prompt, get_processed_data(data_path))
+    try:
+        with open(sentiment_dest, 'w', encoding='utf-8') as file:
+            file.write(analysis)
+            print(f"Sentiments written to {sentiment_dest}")
 
-
+    except Exception as e:
+        print("Error " + e + " has occured")

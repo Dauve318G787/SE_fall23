@@ -54,4 +54,9 @@ completion = openai.ChatCompletion.create(
     ]
 )
 sentiments = completion.choices[0].message
-print(sentiments)
+
+###########################
+# Write the sentiments out to a file
+###########################
+
+

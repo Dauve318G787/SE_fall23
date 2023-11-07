@@ -24,7 +24,7 @@ def main():
     text_data = download_text(url, 20, 1)
     
     if text_data:
-        write_text_file(text_data, output_file)
+        write_text_file(text_data, "raw", output_file)
         parse_file(output_file, tag_file)
 
 if __name__ == "__main__":

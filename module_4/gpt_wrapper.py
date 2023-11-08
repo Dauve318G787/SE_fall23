@@ -49,14 +49,14 @@ def request_sentiment(user_prompt, prompt_content):
     sentiments = ""
     #print(f"Working on {prompt_content}") # For debugging can remove
     # See OpenAI doc for usage
-    completion = openai.ChatCompletion.create(
+    assistant = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": user_prompt},
             {"role": "user", "content": prompt_content}
         ]
     )
-    sentiments = completion.choices[0].message.content
+    sentiments = assistant.choices[0].message.content
     return sentiments
 
 ###########################
@@ -67,6 +67,7 @@ def write_sentiment():
     try:
         with open(sentiment_dest, 'w', encoding='utf-8') as file:
             file.write(analysis)
+            file.write("\n")
             print(f"Sentiments written to {sentiment_dest}")
 
     except Exception as e:

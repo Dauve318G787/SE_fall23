@@ -10,7 +10,7 @@ You can clone this repository and run the yaml file for setup
 git clone <HTTPS/SSH/CLI>
 python -m venv <env_name>  # Create a new venv
 source <env_name>/bin/activate  # Activate the venv on Unix-like systems (use `activate.bat` on Windows)
-pip install -r myenv.yml  # Install packages from the YAML file
+pip install -r environment.yml  # Install packages from the YAML file
 ```
 
 # Usage

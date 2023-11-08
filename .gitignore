@@ -1,6 +1,6 @@
 # Environment stuff
 .env
-environment/
+myenv/
 __pycache__
 
 # Emacs IDE backup files

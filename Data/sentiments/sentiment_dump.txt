@@ -1,1 +1,1 @@
-positive, neutral, neutral, neutral, positive, neutral, neutral, neutral, positive, neutral, neutral
+positive,negative,neutral,neutral,negative,positive,positive,neutral,negative

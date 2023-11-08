@@ -25,3 +25,18 @@ I did create a branch when I did this part, when I merged it with my main branch
 
 # Project 4
 
+First you would go to the openai.com to sign up. Once you login there will be two option between chatgpt and API. After selecting API go to the menu and select API keys. From here you may create a unique key that will be the authenticator for making calls to the API. You MUST save your API key or write it down somewhere for security. If you lose it you'll have to make a new one.
+
+Now to make a call you will need to install the openai package. After you install this package you can refrence the library in your program by importing it. There are two ways you can invoke the openai class, directly or using the contstructor. If called directly you must use
+
+```
+openai.api_key = os.getenv("OPENAI_API_KEY")
+```
+
+otherwise you can pass the key to the constructor
+
+```
+client = OpenAI(
+       api_key=os.environ.get("CUSTOM_ENV_NAME"),
+)
+```

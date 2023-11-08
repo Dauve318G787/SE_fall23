@@ -67,6 +67,7 @@ def write_sentiment():
     try:
         with open(sentiment_dest, 'w', encoding='utf-8') as file:
             file.write(analysis)
+            file.write("\n")
             print(f"Sentiments written to {sentiment_dest}")
 
     except Exception as e:

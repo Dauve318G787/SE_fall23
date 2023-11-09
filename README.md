@@ -13,6 +13,18 @@ source <env_name>/bin/activate  # Activate the venv on Unix-like systems (use `a
 pip install -r environment.yml  # Install packages from the YAML file
 ```
 
+You will also need to provide an API key for OpenAI
+
+```
+touch .env # MUST match this name and be in the root directory of the application
+```
+
+Inside this file use this format
+
+```
+OPENAI_API_KEY=abc123
+```
+
 # Usage
 
 ```
@@ -30,13 +42,15 @@ First you would go to the openai.com to sign up. Once you login there will be tw
 Now to make a call you will need to install the openai package. After you install this package you can refrence the library in your program by importing it. There are two ways you can invoke the openai class, directly or using the contstructor. If called directly you must use
 
 ```
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 ```
 
 otherwise you can pass the key to the constructor
 
 ```
 client = OpenAI(
-       api_key=os.environ.get("CUSTOM_ENV_NAME"),
+       api_key=os.environ.get("OPENAI_API_KEY"),
 )
 ```
+
+Optionally you can replace the environment variable name with a custom name

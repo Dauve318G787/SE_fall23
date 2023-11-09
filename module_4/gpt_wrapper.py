@@ -2,6 +2,7 @@
 
 import os
 import openai
+from openai import OpenAI
 from dotenv import load_dotenv
 
 #######
@@ -13,7 +14,10 @@ env_path = os.path.join(script_dir, "..", ".env")
 data_path = os.path.join(script_dir, "..", "Data/processed/tag_dump.txt")
 sentiment_dest = os.path.join(script_dir, "..", "Data/sentiments/sentiment_dump.txt")
 load_dotenv(env_path)
-openai.api_key = os.getenv("OPENAI_API_KEY")
+#openai.api_key = os.environ.get("OPENAI_API_KEY")
+client = OpenAI(
+    api_key = os.environ.get("OPENAI_API_KEY"),
+)
 prompt = "You are a helpful psychiatrist that can analyze the sentiment of messages. Only return the sentiments of the given messages, delimited by %%. Format your response as comma seperated values" # Prompt to tell the GPT model how to behave
 
 ########
@@ -49,7 +53,7 @@ def request_sentiment(user_prompt, prompt_content):
     sentiments = ""
     #print(f"Working on {prompt_content}") # For debugging can remove
     # See OpenAI doc for usage
-    assistant = openai.chat.completions.create(
+    assistant = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": user_prompt},

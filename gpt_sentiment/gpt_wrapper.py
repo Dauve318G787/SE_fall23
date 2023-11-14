@@ -11,8 +11,8 @@ from dotenv import load_dotenv
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 env_path = os.path.join(script_dir, "..", ".env")
-data_path = os.path.join(script_dir, "..", "Data/processed/tag_dump.txt")
-sentiment_dest = os.path.join(script_dir, "..", "Data/sentiments/sentiment_dump.txt")
+data_path = os.path.join(script_dir, "..", "data/processed/tag_dump.txt")
+sentiment_dest = os.path.join(script_dir, "..", "data/sentiments/sentiment_dump.txt")
 load_dotenv(env_path)
 #openai.api_key = os.environ.get("OPENAI_API_KEY")
 client = OpenAI(

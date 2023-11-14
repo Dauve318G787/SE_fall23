@@ -12,8 +12,8 @@ from bs4 import BeautifulSoup
 def parse_file(input_file, output_file):
 
     cur_dir = os.getcwd()
-    lf_dir = "Data/processed"
-    infile_dir = "Data/raw"
+    lf_dir = "data/processed"
+    infile_dir = "data/raw"
     file_path = os.path.join(cur_dir, lf_dir, output_file)
     input_path = os.path.join(cur_dir, infile_dir, input_file)
     

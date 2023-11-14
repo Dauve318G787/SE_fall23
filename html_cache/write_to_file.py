@@ -7,7 +7,7 @@ import os
 
 def write_text_file(text_data, folder, output_file):
     cur_dir = os.getcwd()
-    data_dir = "Data/" + folder
+    data_dir = "data/" + folder
     file_path = os.path.join(cur_dir, data_dir, output_file)
     try:
         with open(file_path, 'w', encoding='utf-8') as file:

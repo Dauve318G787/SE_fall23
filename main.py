@@ -8,6 +8,7 @@
 
 import sys
 from html_request.get_html_content import process_url
+from html_request.get_html_content import url_content_dict
 from html_cache.write_to_file import write_text_file
 from html_parse.data_parser import parse_file
 from gpt_sentiment.gpt_wrapper import write_sentiment
@@ -18,12 +19,14 @@ def main():
         print("Usage: python main.py <URL_FILE>")
         sys.exit(1)
 
-    url_file = sys.argv[1]
-    raw_file = "data/raw/data_dump.txt"
+    ufile = sys.argv[1]
+    url_file = "data/raw/url_list.json"
+    dict_file = "data/raw/url_dict.json"
     tag_file = "data/processed/tag_dump.txt"
     sentiment_file = "data/sentiments/sentiment_dump.txt"
 
-    process_url(url_file, raw_file)
+    raw_dat = process_url(ufile, url_file)
+    url_content_dict(raw_dat, dict_file)
 
 #    text_data = download_text(url_file, 20, 1)
     

@@ -9,8 +9,8 @@
 import sys
 from html_request.get_html_content import process_url
 from html_request.get_html_content import url_content_dict
-from html_cache.write_to_file import write_text_file
-from html_parse.data_parser import parse_file
+from html_request.json_helper import read_json
+from html_parse.data_parser import get_html_tags
 from gpt_sentiment.gpt_wrapper import write_sentiment
 
 def main():
@@ -22,20 +22,14 @@ def main():
     ufile = sys.argv[1]
     url_file = "data/raw/url_list.json"
     dict_file = "data/raw/url_dict.json"
-    tag_file = "data/processed/tag_dump.txt"
+    tag_file = "data/processed/tag_dump.json"
     sentiment_file = "data/sentiments/sentiment_dump.txt"
 
-    raw_dat = process_url(ufile, url_file)
-    url_content_dict(raw_dat, dict_file)
+    raw_dat = process_url(ufile, url_file) # takes file and converts it to json list
+    url_content_dict(raw_dat, dict_file) # takes json list, gets content from url, makes json dict
 
-#    text_data = download_text(url_file, 20, 1)
+    # takes json dict, gets tags with BS4, makes json dict
+    get_html_tags(read_json(dict_file), tag_file)
     
-#    if text_data:
-#        write_text_file(text_data, "raw", raw_file)
-#        parse_file(raw_file, tag_file)
-#        write_sentiment()
-#    else:
-#        print(f"Failed to retrieve content: URL_FROM_FILE")
-
 if __name__ == "__main__":
     main()

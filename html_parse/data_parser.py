@@ -7,30 +7,26 @@
 import os
 import lxml
 import chardet
+import json
 from bs4 import BeautifulSoup
 
-def parse_file(input_file, output_file):
-
-    cur_dir = os.getcwd()
-    lf_dir = "data/processed"
-    infile_dir = "data/raw"
-    file_path = os.path.join(cur_dir, lf_dir, output_file)
-    input_path = os.path.join(cur_dir, infile_dir, input_file)
-    
+def get_html_tags(json_dict, tag_path):
     try:
-        with open(input_path, 'r', encoding='utf-8') as data_file:
-
-            data_buffer = data_file.read()
-            soup = BeautifulSoup(data_buffer, 'lxml')
+        tag_buffer = {}
+        for url, content in json_dict.items():
+            soup = BeautifulSoup(content, 'lxml')
             body_tag = soup.find("body")
             comments = body_tag.find_all("div", class_="md")
-            
-            with open(file_path, 'w', encoding='utf-8') as results_file:
-                for comment in comments[2:]:
-                    results_file.write(comment.text + "\n")
 
-            print("Written to", output_file)        
+            comment_texts = [comment.get_text() for comment in comments[2:]] if comments else None
+            tag_buffer[url] = comment_texts
+            
+        with open(tag_path, 'w', encoding='utf-8') as tag_file:
+            json.dump(tag_buffer, tag_file, indent=2)
+
+        
+        return tag_path
 
     except Exception as e:
         print("Error: ", str(e))
-        return 1
+        return None

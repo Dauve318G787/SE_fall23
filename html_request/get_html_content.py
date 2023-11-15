@@ -12,7 +12,7 @@ def url_content_dict(url_dict, json_dict):
     with open(json_dict, 'w', encoding='utf-8') as json_file:
         json.dump(url_dict, json_file, indent=2)
 
-    print(f"JSON dict made {json_dict}")
+    print(f"JSON URL Dict: {json_dict}")
     return json_dict
 
 def download_text(url, max_retries, retry_delay):

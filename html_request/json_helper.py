@@ -31,7 +31,7 @@ def write_json(in_file, out_file):
         with open(out_file, 'w', encoding='utf-8') as json_file:
             json.dump(urls, json_file, indent=2)
             
-        print(f"URLs written to '{out_file}'")
+        print(f"JSON URL List: {out_file}")
         return out_file
         
     except Exception as e:
